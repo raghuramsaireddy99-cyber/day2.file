@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<!-- LOW LEVEL TASK 1 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NextGen Company</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    line-height:1.6;
+    background:#f4f7fb;
+}
+
+/* LOW LEVEL TASK 2,3,4 */
+/* HEADER + NAVBAR */
+
+header{ 
+    background:#0f3460;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 50px;
+
+    flex-wrap:wrap;
+
+    /* FIXED NAVBAR */
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    z-index:1000;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffd166;
+}
+
+/* MEDIUM TASK 1 */
+/* HERO SECTION */
+
+.hero{
+    height:90vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.hero-content button{
+    padding:15px 30px;
+    border:none;
+    background:#ffd166;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* COMMON */
+
+section{
+    padding:70px 50px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#0f3460;
+    font-size:40px;
+}
+.site-logo{
+	width: 150px;
+}
+.site-logo a{
+	display: block;
+}
+.site-logo img{
+	max-width: 100%;
+    color:white;
+    filter: brightness(0) invert(1);
+}
+/* LOW TASK 7 */
+/* TWO COLUMN LAYOUT */
+
+.two-column{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.left,
+.right{
+    flex:1;
+}
+
+.right img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* MEDIUM TASK 5 */
+/* SERVICES */
+
+.services{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.service-box{
+    flex:1;
+    min-width:250px;
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+}
+
+/* LOW TASK 5 + 8 */
+/* RESPONSIVE IMAGES */
+
+.service-box img,
+.portfolio img,
+.contact img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.service-content{
+    padding:20px;
+    text-align:center;
+}
+
+/* MEDIUM TASK 2 */
+/* ACCESSIBLE LOGIN FORM */
+
+.login-section{
+    background:#eaf4ff;
+}
+
+form{
+    max-width:500px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,
+textarea{
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+/* MEDIUM TASK 4 */
+/* BLOG */
+
+.blog-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+article{
+    flex:2;
+
+    background:white;
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+aside{
+    flex:1;
+
+    background:#dfefff;
+
+    padding:25px;
+
+    border-radius:10px;
+}
+
+/* MEDIUM TASK 6 */
+/* PORTFOLIO */
+
+.portfolio{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.project-box{
+    flex:1;
+    min-width:250px;
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-content{
+    padding:20px;
+    text-align:center;
+}
+
+/* MEDIUM TASK 8 */
+/* CONTACT */
+
+.contact{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.contact-form{
+    flex:1;
+}
+
+.contact-map{
+    flex:1;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0f3460;
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .services,
+    .two-column,
+    .blog-container,
+    .portfolio,
+    .contact{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="site-logo">
+							<a href="#"><img src="https://images.squarespace-cdn.com/content/v1/5bd9848f2714e5ae6bb3d485/2f80a43a-5ab3-4a59-84b6-815f3b63185e/NextGen-logo+(1).png style="height:60px; width:auto;"" alt=""></a>          				
+						</div>
+   <!-- LOW TASK 3 -->
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#blog">Blog</a>
+        <a 
+   href="https://raghuramsaireddy99-cyber.github.io/my-portfolio-99/" 
+   target="_blank"
+>
+   My Portfolio
+</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Creative Digital Solutions
+        </h1>
+
+        <p>
+            Modern responsive websites for growing businesses.
+        </p>
+
+        <button onclick="alert('Welcome To NextGen Company')">
+            Explore Now
+        </button>
+
+    </div>
+
+</section>
+
+<!-- TWO COLUMN SECTION -->
+
+<section>
+
+    <h2>About Company</h2>
+
+    <div class="two-column">
+
+        <div class="left">
+
+            <p>
+                NextGen provides responsive web design,
+                branding, and digital marketing solutions.
+            </p>
+
+            <p>
+                We focus on accessibility,
+                performance, and modern UI design.
+            </p>
+
+        </div>
+
+        <div class="right">
+
+            <!-- LOW TASK 5 -->
+            <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                alt="Company Team"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <h2>Our Services</h2>
+
+    <div class="services">
+
+        <div class="service-box">
+
+            <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                alt="Web Design"
+            >
+
+            <div class="service-content">
+
+                <h3>Web Design</h3>
+
+                <p>
+                    Professional responsive website creation.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="service-box">
+
+            <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692"
+                alt="Marketing"
+            >
+
+            <div class="service-content">
+
+                <h3>Marketing</h3>
+
+                <p>
+                    SEO and social media marketing solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="service-box">
+
+            <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                alt="Business Strategy"
+            >
+
+            <div class="service-content">
+
+                <h3>Business Strategy</h3>
+
+                <p>
+                    Smart digital growth strategies for brands.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ACCESSIBLE LOGIN -->
+
+<section class="login-section">
+
+    <h2>Login Page</h2>
+o
+    <form>
+
+        <!-- LOW TASK 6 -->
+        <!-- ACCESSIBLE LABELS -->
+
+        <label for="username">
+            Username
+        </label>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter Username"
+            title="Username Field"
+            aria-label="Username"
+        >
+
+        <label for="password">
+            Password
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            title="Password Field"
+            aria-label="Password"
+        >
+
+        <button
+            type="submit"
+            style="padding:14px; background:#0f3460; color:white; border:none;"
+            onclick="alert('Login Successful')"
+        >
+            Login
+        </button>
+
+    </form>
+
+</section>
+
+<!-- BLOG SECTION -->
+
+<section id="blog">
+
+    <h2>Latest Blog</h2>
+
+    <div class="blog-container">
+
+        <article>
+
+            <h3>
+                Responsive Web Design Trends
+            </h3>
+
+            <p>
+                Learn modern techniques for creating
+                mobile-friendly and accessible websites.
+            </p>
+
+        </article>
+
+        <aside>
+
+            <h3>
+                Related Topics
+            </h3>
+
+            <ul>
+
+                <li>HTML5</li>
+                <li>CSS Flexbox</li>
+                <li>Accessibility</li>
+
+            </ul>
+
+        </aside>
+
+    </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+    <h2>Portfolio Projects</h2>
+
+    <div class="portfolio">
+
+        <div class="project-box">
+
+            <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                alt="Portfolio Project"
+            >
+
+            <div class="project-content">
+
+                <h3>Startup Website</h3>
+
+            </div>
+
+        </div>
+
+        <div class="project-box">
+
+            <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                alt="Portfolio Team"
+            >
+
+            <div class="project-content">
+
+                <h3>Business Dashboard</h3>
+
+            </div>
+
+        </div>
+
+        <div class="project-box">
+
+            <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+                alt="Creative Office"
+            >
+
+            <div class="project-content">
+
+                <h3>Creative Portfolio</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2>Contact Us</h2>
+
+    <div class="contact">
+
+        <div class="contact-form">
+
+            <form>
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter Full Name"
+                >
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter Email"
+                >
+
+                <textarea
+                    rows="5"
+                    placeholder="Write Message"
+                ></textarea>
+
+                <button
+                    type="submit"
+                    style="padding:14px; background:#0f3460; color:white; border:none;"
+                    onclick="alert('Message Sent Successfully')"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="contact-map">
+
+            <!-- MEDIUM TASK 8 -->
+            <iframe
+                src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="350"
+                style="border:0;"
+            >
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>© 2026 NextGen Company</p>
+
+    <p>Email : nextgen@gmail.com</p>
+
+</footer>
+
+</body>
+
+</html>

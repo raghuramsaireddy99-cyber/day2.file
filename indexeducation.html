@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SkillNest Academy</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Verdana, sans-serif;
+    background:#f4f9ff;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    background:#14213d;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 60px;
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.2);
+
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:34px;
+    font-weight:bold;
+    color:#fca311;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#fca311;
+}
+
+.nav-btn{
+    padding:12px 22px;
+    border:none;
+    background:#fca311;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    padding:120px 30px 50px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-content h1{
+    font-size:68px;
+    margin-bottom:25px;
+}
+
+.hero-content p{
+    font-size:24px;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons button{
+    padding:16px 34px;
+    border:none;
+    border-radius:6px;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.primary-btn{
+    background:#fca311;
+    color:black;
+}
+
+.secondary-btn{
+    background:white;
+}
+
+.hero-buttons button:hover{
+    transform:scale(1.05);
+}
+
+/* COMMON */
+
+section{
+    padding:90px 60px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:42px;
+    color:#14213d;
+}
+
+/* ABOUT */
+
+.about{
+    display:flex;
+    gap:40px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h3{
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.about-text p{
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.about-image{
+    flex:1;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:15px;
+}
+
+/* COURSES */
+
+.courses{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.course-card{
+    flex:1;
+    min-width:280px;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.course-card:hover{
+    transform:translateY(-10px);
+}
+
+.course-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.course-content{
+    padding:25px;
+}
+
+.course-content h3{
+    margin-bottom:15px;
+}
+
+.course-content button{
+    margin-top:15px;
+    padding:10px 22px;
+    border:none;
+    background:#14213d;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* FEATURES */
+
+.features{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.feature-box{
+    flex:1;
+    min-width:250px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.1);
+}
+
+.feature-box h3{
+    margin:20px 0;
+}
+
+/* TEACHERS */
+
+.teachers{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.teacher-card{
+    flex:1;
+    min-width:250px;
+
+    background:white;
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.1);
+}
+
+.teacher-card img{
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    margin-bottom:20px;
+}
+
+.teacher-card button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    background:#fca311;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* STATS */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.stat-box{
+    background:white;
+    width:240px;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.1);
+}
+
+.stat-box h1{
+    color:#fca311;
+    font-size:50px;
+}
+
+/* TESTIMONIALS */
+
+.reviews{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.review-card{
+    flex:1;
+    min-width:260px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 12px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+
+.contact{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.contact-form{
+    flex:1;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+input,
+textarea{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:16px;
+}
+
+form button{
+    padding:15px;
+    border:none;
+    background:#14213d;
+    color:white;
+    border-radius:6px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.contact-image{
+    flex:1;
+}
+
+.contact-image img{
+    width:100%;
+    border-radius:15px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#14213d;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+footer a{
+    color:#fca311;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .about,
+    .courses,
+    .features,
+    .teachers,
+    .reviews,
+    .contact{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        SkillNest
+    </div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <button
+        class="nav-btn"
+        onclick="alert('Welcome To SkillNest Academy')"
+    >
+        Join Now
+    </button>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Learn Future Skills From Industry Experts
+        </h1>
+
+        <p>
+            Interactive online learning platform
+            for coding, business, design,
+            communication and technology skills.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="alert('Course Enrollment Opened')"
+            >
+                Start Learning
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="alert('Free Demo Started')"
+            >
+                Watch Demo
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section>
+
+    <h2>About SkillNest</h2>
+
+    <div class="about">
+
+        <div class="about-text">
+
+            <h3>
+                Smart Learning Platform
+            </h3>
+
+            <p>
+                SkillNest Academy provides
+                modern education programs
+                designed for students and professionals.
+            </p>
+
+            <p>
+                Our platform combines practical projects,
+                live sessions, certifications,
+                and industry-level mentorship.
+            </p>
+
+        </div>
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1513258496099-48168024aec0"
+                alt="Students Learning"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COURSES -->
+
+<section id="courses">
+
+    <h2>Popular Courses</h2>
+
+    <div class="courses">
+
+        <div class="course-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                alt="Web Development"
+            >
+
+            <div class="course-content">
+
+                <h3>Full Stack Development</h3>
+
+                <p>
+                    Learn HTML, CSS, JavaScript,
+                    React, Node.js and databases.
+                </p>
+
+                <button onclick="alert('Full Stack Course Opened')">
+                    Explore Course
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="course-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+                alt="Business Course"
+            >
+
+            <div class="course-content">
+
+                <h3>Digital Marketing</h3>
+
+                <p>
+                    Master SEO, social media,
+                    branding and online advertising.
+                </p>
+
+                <button onclick="alert('Marketing Course Opened')">
+                    Explore Course
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="course-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+                alt="Design Course"
+            >
+
+            <div class="course-content">
+
+                <h3>UI/UX Designing</h3>
+
+                <p>
+                    Create modern mobile and web
+                    interface designs professionally.
+                </p>
+
+                <button onclick="alert('Design Course Opened')">
+                    Explore Course
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section>
+
+    <h2>Why Students Choose Us</h2>
+
+    <div class="features">
+
+        <div class="feature-box">
+
+            <h3>Live Classes</h3>
+
+            <p>
+                Interactive online sessions
+                with industry mentors.
+            </p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>Certificates</h3>
+
+            <p>
+                Industry-recognized certifications
+                after course completion.
+            </p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <h3>Placement Support</h3>
+
+            <p>
+                Resume preparation and
+                interview training support.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TEACHERS -->
+
+<section id="teachers">
+
+    <h2>Expert Trainers</h2>
+
+    <div class="teachers">
+
+        <div class="teacher-card">
+
+            <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Teacher"
+            >
+
+            <h3>Emily Carter</h3>
+
+            <p>Frontend Development Mentor</p>
+
+            <button onclick="alert('Mentor Profile Viewed')">
+                View Profile
+            </button>
+
+        </div>
+
+        <div class="teacher-card">
+
+            <img
+                src="https://randomuser.me/api/portraits/men/54.jpg"
+                alt="Teacher"
+            >
+
+            <h3>Michael Brown</h3>
+
+            <p>Marketing Expert</p>
+
+            <button onclick="alert('Marketing Trainer Viewed')">
+                View Profile
+            </button>
+
+        </div>
+
+        <div class="teacher-card">
+
+            <img
+                src="https://randomuser.me/api/portraits/women/49.jpg"
+                alt="Teacher"
+            >
+
+            <h3>Olivia Smith</h3>
+
+            <p>UI/UX Specialist</p>
+
+            <button onclick="alert('Designer Profile Viewed')">
+                View Profile
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section>
+
+    <h2>Platform Achievements</h2>
+
+    <div class="stats">
+
+        <div class="stat-box">
+
+            <h1>15K+</h1>
+
+            <p>Students Enrolled</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h1>120+</h1>
+
+            <p>Professional Courses</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h1>98%</h1>
+
+            <p>Student Satisfaction</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="reviews">
+
+    <h2>Student Testimonials</h2>
+
+    <div class="reviews">
+
+        <div class="review-card">
+
+            <p>
+                “Amazing instructors and practical learning projects.”
+            </p>
+
+            <h4>- Daniel</h4>
+
+        </div>
+
+        <div class="review-card">
+
+            <p>
+                “Helped me get my first frontend developer job.”
+            </p>
+
+            <h4>- Sophia</h4>
+
+        </div>
+
+        <div class="review-card">
+
+            <p>
+                “Very professional platform with great support.”
+            </p>
+
+            <h4>- Ethan</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2>Contact Us</h2>
+
+    <div class="contact">
+
+        <div class="contact-form">
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Enter Name"
+                    aria-label="Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Enter Email"
+                    aria-label="Email"
+                    required
+                >
+
+                <textarea
+                    rows="6"
+                    placeholder="Write Message"
+                    aria-label="Message"
+                ></textarea>
+
+                <button
+                    type="submit"
+                    onclick="alert('Message Sent Successfully')"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="contact-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                alt="Online Education"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2 style="color:white;">
+        SkillNest Academy
+    </h2>
+
+    <p>
+        Building smarter careers through
+        quality online education.
+    </p>
+
+    <br>
+
+    <a href="#">Privacy Policy</a>
+    <a href="#">Careers</a>
+    <a href="#">Support</a>
+
+    <br><br>
+
+    <p>
+        © 2026 SkillNest Learning Platform
+    </p>
+
+</footer>
+
+</body>
+
+</html>
